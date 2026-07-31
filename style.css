@@ -1,0 +1,213 @@
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f8fafc;
+  --text: #111827;
+  --muted: #4b5563;
+  --accent: #0f766e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.shell {
+  width: min(920px, 100%);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+}
+
+.lead {
+  margin: 12px 0 0;
+  color: var(--muted);
+  max-width: 65ch;
+  line-height: 1.7;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: center;
+  gap: 32px;
+}
+
+.sourced-illustration-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #dfe9e6;
+  border-radius: 18px;
+  padding: 16px 16px 12px;
+  background: #fbfefc;
+}
+
+.starter-illustration,
+.workflow-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.starter-illustration {
+  max-height: 320px;
+}
+
+.sourced-illustration-card figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.quick-guide,
+.workflow-card {
+  margin-top: 22px;
+  border: 1px solid #e2e8e5;
+  border-radius: 16px;
+  padding: 22px;
+  background: #ffffff;
+}
+
+.section-heading h2,
+.workflow-card h2 {
+  margin-bottom: 7px;
+}
+
+.section-heading > p:last-child,
+.workflow-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.shortcut {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.shortcut span {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.shortcut strong {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #94a3b8;
+}
+
+.shortcut strong b {
+  font-size: 0.7rem;
+}
+
+.workflow-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(330px, 1.1fr);
+  align-items: center;
+  gap: 22px;
+}
+
+.workflow-illustration {
+  max-height: 240px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+kbd,
+code {
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+}
+
+kbd {
+  border-bottom-width: 2px;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    padding: 20px;
+  }
+
+  .hero-layout,
+  .workflow-card {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .shell {
+    padding: 16px;
+  }
+
+  .shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-card {
+    padding: 18px;
+  }
+}

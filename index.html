@@ -3,11 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New File</title>
+    <title>Get started with CodX Editor</title>
+    <link rel="icon" href="cx.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <main class="shell">
+      <section class="hero hero-layout">
+        <div class="hero-copy">
+          <img class="brand-logo" src="cx.png" alt="CodX Editor logo">
+          <p class="eyebrow">CodX Editor Starter</p>
+          <h1>Build and preview web apps instantly</h1>
+          <p class="lead">
+            CodX Editor is a browser-based coding workspace where you can write, run, debug, save, collaborate on, and publish complete web projects without leaving the page.
+          </p>
+        </div>
+        <figure class="sourced-illustration-card">
+          <img class="starter-illustration" src="/assets/illustrations/home-development.svg" alt="A developer working at a laptop with code and application screens." width="805" height="745">
+          <figcaption>Move from editable project files to a working browser preview.</figcaption>
+        </figure>
+      </section>
+
+      <section class="quick-guide" aria-labelledby="quickGuideTitle">
+        <div class="section-heading">
+          <p class="eyebrow">Quick orientation</p>
+          <h2 id="quickGuideTitle">The controls you will use first</h2>
+          <p>Use these shortcuts while your cursor is inside the editor. On macOS, use Command wherever Ctrl is shown. Suggestions update smoothly, Enter respects existing block braces, and long lines keep syntax colors in the visible editor area.</p>
+        </div>
+        <div class="shortcut-grid">
+          <article class="shortcut"><span>Command palette</span><strong><kbd>Ctrl</kbd><b>+</b><kbd>K</kbd></strong></article>
+          <article class="shortcut"><span>Run preview</span><strong><kbd>Ctrl</kbd><b>+</b><kbd>Enter</kbd></strong></article>
+          <article class="shortcut"><span>New file</span><strong><kbd>Ctrl</kbd><b>+</b><kbd>Q</kbd></strong></article>
+          <article class="shortcut"><span>Export project</span><strong><kbd>Ctrl</kbd><b>+</b><kbd>S</kbd></strong></article>
+          <article class="shortcut"><span>Toggle console</span><strong><kbd>Ctrl</kbd><b>+</b><kbd>Shift</kbd><b>+</b><kbd>C</kbd></strong></article>
+          <article class="shortcut"><span>Close or exit</span><strong><kbd>Esc</kbd></strong></article>
+        </div>
+      </section>
+
+      <section class="workflow-card" aria-labelledby="workflowTitle">
+        <div>
+          <p class="eyebrow">One simple flow</p>
+          <h2 id="workflowTitle">Write, run, improve, share</h2>
+          <p>Edit a file, run the preview, use the Console to understand problems, then save, collaborate, publish, or send the project to another device.</p>
+        </div>
+        <img class="workflow-illustration" src="/assets/illustrations/about-collaboration.svg" alt="A development team collaborating around a shared project." width="936" height="505">
+      </section>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
