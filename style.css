@@ -96,12 +96,97 @@ h1 {
 }
 
 .quick-guide,
-.workflow-card {
+.workflow-card,
+.controls {
   margin-top: 22px;
   border: 1px solid #e2e8e5;
   border-radius: 16px;
   padding: 22px;
   background: #ffffff;
+}
+
+/* A hairline of accent along the top edge ties the panels together without
+   adding another border colour. */
+.quick-guide,
+.controls {
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-guide::before,
+.controls::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.control-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.control-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 15px 16px;
+  background: var(--panel-2);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.control-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, #e5e7eb);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.07);
+}
+
+.control-card h3 {
+  margin: 0 0 4px;
+  font-size: 0.86rem;
+  color: var(--accent);
+}
+
+.control-card > p {
+  margin: 0 0 11px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.control-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Each item is the button's exact label, so a name here can be matched to a
+   button on screen without guessing. */
+.control-card li {
+  padding: 4px 9px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.control-card li em {
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.55;
+}
+
+.controls-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 .section-heading h2,
@@ -132,7 +217,13 @@ h1 {
   border: 1px solid #e5e7eb;
   border-radius: 11px;
   padding: 12px;
-  background: #f8fafc;
+  background: var(--panel-2);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.shortcut:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, #e5e7eb);
+  background: #ffffff;
 }
 
 .shortcut span {
@@ -203,11 +294,20 @@ kbd {
     padding: 16px;
   }
 
-  .shortcut-grid {
+  .shortcut-grid,
+  .control-grid {
     grid-template-columns: 1fr;
   }
 
-  .workflow-card {
+  .workflow-card,
+  .controls {
     padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .control-card,
+  .shortcut {
+    transition: none;
   }
 }
